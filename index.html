@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script src="cordova.js"></script>
 <script>
 
 function pageReady()
@@ -54,6 +54,7 @@ function onFail(message)
 <body onload="pageReady()">
 <h1 id="status"></h1>
 <div id="images">
+<form>
 <table>
 <tr>
 	<td><img id="pix" height="200" width="200" src="" /></td>
@@ -62,10 +63,11 @@ function onFail(message)
 		<input type="button" onclick="FromGal()" value="From Gallery" /><br/></td>
 </tr>
 <table>
+</form>
 </div>
 <hr>
 <div id="form">
-<form method="get" action="">
+<form>
 
 	Name:<input type="text" required="required" placeholder="Pls enter your ic herre"/>
 	<br>
