@@ -28,7 +28,15 @@ function fromCam()
 
 function fromGal()
 {
-	navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL, pictureSourceType: Camera.PictureSourceType.PHOTOLIBRARY});
+		var options = {
+		quality:80,
+		destinationType: Camera.DestinationType.DATA_URL, //DATA_URL,FILE_URI,NATIVE_URI
+		allowEdit:true,
+		encodingType: Camera.EncodingType.JPEG,
+		pictureSourceType: Camera.PictureSourceType.PHOTOLIBRARY //PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM
+	}
+	navigator.camera.getPicture(displayPic,errorPic,options);
+	//navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL, pictureSourceType: Camera.PictureSourceType.PHOTOLIBRARY});
 }
 
 function displayPic(imageURL)
