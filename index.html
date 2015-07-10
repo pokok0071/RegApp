@@ -13,7 +13,20 @@ function initPage()
 	document.getElementById("status").innerHTML = "Page ready";
 }
 
-function startCam()
+function fromCam()
+{
+	var options = {
+		quality:80,
+		destinationType:DATA_URL, //DATA_URL,FILE_URI,NATIVE_URI
+		allowEdit:true,
+		encodingType:JPEG,
+		PictureSourceType:CAMERA //PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM
+	}
+	navigator.camera.getPicture(displayPic,errorPic,options);
+	//navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL});
+}
+
+function fromGal()
 {
 	navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL});
 }
@@ -30,7 +43,9 @@ function errorPic()
 </head>
 <body onload="pageReady()">
 <h1 id="status"></h1>
-<input type="button" onclick="startCam()" value="Start Cam" /><br/>
+<input type="button" onclick="fromCam()" value="From Camera" /><br/>
+<input type="button" onclick="fromGalCam()" value="From Gallery" /><br/>
+
 <img id="pix" height="300" src="" />
 </body>
 </html>
