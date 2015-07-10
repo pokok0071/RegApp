@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+
+
+</style>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script>
 function pageReady()
@@ -46,14 +50,36 @@ function displayPic(imageURL)
 
 function errorPic()
 {
+
 }
 </script>
 </head>
 <body onload="pageReady()">
-<h1 id="status"></h1>
+<div id="images" align="center">
+<img id="pix" height="200" src="" />
+</div>
+<div id="select" align="center">
 <input type="button" onclick="fromCam()" value="From Camera" /><br/>
 <input type="button" onclick="fromGal()" value="From Gallery" /><br/>
+</div>
+<hr>
 
-<img id="pix" height="300" src="" />
+<tr>
+<div id="form" align="center">
+<table>
+<form>
+	<td>NAME:<input type="text" required="required" placeholder="Pls enter your ic herre"/></td>
+</tr>
+<tr>
+	<td>EMAIL:<input type="email" name="usermail" required="required"/></td>
+</tr>
+<tr>
+	<td><input type="submit" /></td>
+</tr>
+</form>
+<table>
+</div>
+
+<hr>
 </body>
 </html>
