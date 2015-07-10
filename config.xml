@@ -16,8 +16,8 @@
     <author href="https://build.phonegap.com" email="support@phonegap.com">
         Faizal bin Zanel
     </author>
-	<!--<icon src="images/icon.png" />
-	<gap:splash src="potatoes.jpg" /> -->
+	<icon src="icon.png" />
+	<gap:splash src="splash.png" />
 	
 	<feature name="http://api.phonegap.com/1.0/file" />
 	
