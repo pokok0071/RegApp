@@ -27,7 +27,7 @@ function FromCam()
 	//navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL});
 }
 
-function FromGal()
+/*function FromGal()
 {
 	var options = {
 		quality:80,
@@ -38,7 +38,7 @@ function FromGal()
 	}
 	navigator.camera.getPicture(onSuccess,onFail,options);
 	//navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL});
-}
+} */
 
 function onSuccess(imageURL)
 {
@@ -54,14 +54,12 @@ function onFail(message)
 <body onload="pageReady()">
 <h1 id="status"></h1>
 <div id="images">
-<table>
-<tr>
-	<td><img id="pix" height="200" width="200" src="" /></td>
 
-	<td><input type="button" onclick="FromCam()" value="Take Picture" />
-		<input type="button" onclick="FromGal()" value="From Gallery" /><br/></td>
-</tr>
-<table>
+	<img id="pix" height="200" width="200" src="" />
+
+	<input type="button" onclick="FromCam()" value="Take Picture" />
+		<!--<input type="button" onclick="FromGal()" value="From Gallery" /><br/> -->
+
 </div>
 <hr>
 <!--<div id="form">
