@@ -18,9 +18,9 @@ function fromCam()
 	var options = {
 		quality:80,
 		destinationType: Camera.DestinationType.DATA_URL, //DATA_URL,FILE_URI,NATIVE_URI
-		//allowEdit:true,
-		//encodingType:JPEG,
-		pictureSourceType:CAMERA //PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM
+		allowEdit:true,
+		encodingType: Camera.EncodingType.JPEG,
+		pictureSourceType: Camera.PictureSourceType.CAMERA //PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM
 	}
 	navigator.camera.getPicture(displayPic,errorPic,options);
 	//navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL});
@@ -28,7 +28,7 @@ function fromCam()
 
 function fromGal()
 {
-	navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL});
+	navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL, pictureSourceType: PHOTOLIBRARY});
 }
 
 function displayPic(imageURL)
