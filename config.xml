@@ -17,7 +17,7 @@
         Faizal bin Zanel
     </author>
 	<icon src="icon.png" />
-	<gap:splash src="splash.jpeg" />
+	<gap:splash src="splash.jpg" />
 	
 	<feature name="http://api.phonegap.com/1.0/file" />
 	
