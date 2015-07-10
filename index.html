@@ -28,7 +28,7 @@ function fromCam()
 
 function fromGal()
 {
-	navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL, pictureSourceType: Camera.DestinationType.PHOTOLIBRARY});
+	navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL, pictureSourceType: Camera.PictureSourceType.PHOTOLIBRARY});
 }
 
 function displayPic(imageURL)
