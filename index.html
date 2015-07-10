@@ -7,6 +7,20 @@
 </style>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script>
+
+function validateForm() {
+    var x = document.forms["borang"]["name"].value;
+	var y = document.forms["borang"]["usermail"].value;
+    if (x == null || x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+	if (y == null || y == "") {
+        alert("Email must be filled out");
+        return false;
+	}
+}
+
 function pageReady()
 {
 	document.addEventListener("deviceready",initPage,false);
@@ -56,7 +70,7 @@ function errorPic()
 </head>
 <body onload="pageReady()">
 <div id="images" align="center">
-<img id="pix" height="200" src="" />
+<img id="pix" height="150" src="" />
 </div>
 <div id="select" align="center">
 <input type="button" onclick="fromCam()" value="From Camera" /><br/>
@@ -67,11 +81,11 @@ function errorPic()
 <tr>
 <div id="form" align="center">
 <table>
-<form>
-	<td>NAME:<input type="text" required="required" placeholder="Pls enter your ic herre"/></td>
+<form name="borang" onsubmit="validateForm()">
+	<td>NAME:<input type="text" name="name" placeholder="Pls enter your ic herre"/></td>
 </tr>
 <tr>
-	<td>EMAIL:<input type="email" name="usermail" required="required"/></td>
+	<td>EMAIL:<input type="email" name="usermail" /></td>
 </tr>
 <tr>
 	<td><input type="submit" /></td>
