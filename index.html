@@ -1,9 +1,8 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-<script src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script>
-
 function pageReady()
 {
 	document.addEventListener("deviceready",initPage,false);
@@ -11,73 +10,27 @@ function pageReady()
 
 function initPage()
 {
-	document.getElementById("status").innerHTML = "Page Is Loaded";
+	document.getElementById("status").innerHTML = "Page ready";
 }
 
-function FromCam()
+function startCam()
 {
-	var options = {
-		quality:80,
-		destinationType:DATA_URL, //DATA_URL,FILE_URI,NATIVE_URI
-		allowEdit:true,
-		encodingType:JPEG,
-		PictureSourceType:CAMERA //PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM
-	}
-	navigator.camera.getPicture(onSuccess,onFail,options);
-	//navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL});
+	navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL});
 }
 
-/*function FromGal()
-{
-	var options = {
-		quality:80,
-		destinationType:DATA_URL, //DATA_URL,FILE_URI,NATIVE_URI
-		allowEdit:true,
-		encodingType:JPEG,
-		PictureSourceType:PHOTOLIBRARY //PHOTOLIBRARY,CAMERA,SAVEDPHOTOALBUM
-	}
-	navigator.camera.getPicture(onSuccess,onFail,options);
-	//navigator.camera.getPicture(displayPic,errorPic,{quality:70,destinationType: Camera.DestinationType.DATA_URL});
-} */
-
-function onSuccess(imageURL)
+function displayPic(imageURL)
 {
 	document.getElementById("pix").src = "data:image/jpeg;base64," + imageURL;
 }
 
-function onFail(message)
+function errorPic()
 {
-	//message = reason for failure
 }
 </script>
 </head>
 <body onload="pageReady()">
 <h1 id="status"></h1>
-<div id="images">
-
-	<img id="pix" height="200" width="200" src="" />
-
-	<input type="button" onclick="FromCam()" value="Take Picture" />
-		<!--<input type="button" onclick="FromGal()" value="From Gallery" /><br/> -->
-
-</div>
-<hr>
-<!--<div id="form">
-<form>
-
-	Name:<input type="text" required="required" placeholder="Pls enter your ic herre"/>
-	<br>
-	Email:<input type="email" name="usermail" required="required" placeholder="Pls enter your email here" />
-
-	
-	<br>
-	<br>
-	<input type="submit" value="Register"/>
-
-</form>
-<hr>
-</div> -->
+<input type="button" onclick="startCam()" value="Start Cam" /><br/>
+<img id="pix" height="300" src="" />
 </body>
-
-
 </html>

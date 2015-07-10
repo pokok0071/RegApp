@@ -20,6 +20,7 @@
 	<gap:splash src="potatoes.jpg" /> -->
 	
 	<feature name="http://api.phonegap.com/1.0/file" />
+	
 	<gap:plugin name="org.apache.cordova.camera" />
-	<gap:plugin name="org.apache.cordova.dialogs" />
+
 </widget>
